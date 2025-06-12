@@ -6,7 +6,7 @@
 
    			window.addEventListener("onEmbeddedMessagingReady", () => {            
 			console.log( "Inside Prechat API!!" );
-			embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( {'QueueName' : 'Edloe Finch' } );
+			embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( {'QueueName' : 'SOI' } );
 			});
 			window.addEventListener("onEmbeddedMessagingReady", e => {
 			    embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({
