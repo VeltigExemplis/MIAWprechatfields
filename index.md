@@ -5,12 +5,26 @@
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 			
-			embedded_svc.settings.setVisiblePrechatFields = {
-			  "FirstName":}
-			  {"LastName":}
-			  {"Email":}
-			  {"Subject":
-			};
+			window.addEventListener("onEmbeddedMessagingReady", e => {
+			    embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({
+			        "_firstName": {
+			            "value": "Test",
+			            "isEditableByEndUser": false
+			        },
+			        "_lastName": {
+			            "value": "User",
+			            "isEditableByEndUser": false
+			        },
+			        "_email": {
+			            "value": "test.user@test.com",
+			            "isEditableByEndUser": false
+			        },
+			        "_subject": {
+			            "value": "Testing",
+			            "isEditableByEndUser": true
+			        }
+			    });
+			});
 			
 			embeddedservice_bootstrap.init(
 				'00DO400000C6iHG',
