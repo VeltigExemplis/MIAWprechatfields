@@ -1,5 +1,4 @@
 <html>
-  <body>
     <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
@@ -37,6 +36,4 @@
 	};
     </script>
     <script type='text/javascript' src='https://exemplis--partial.sandbox.my.site.com/ESWSitOnItMessagingChat1749155554156/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-
-  </body>
 </html>
