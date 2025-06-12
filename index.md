@@ -6,9 +6,9 @@
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 			
 			embedded_svc.settings.setVisiblePrechatFields = {
-			  FirstName:,
-			  LastName:,
-			  Email:,
+			  FirstName:
+			  LastName:
+			  Email:
 			  Subject:
 			};
 			
