@@ -19,15 +19,15 @@
 			            "isEditableByEndUser": true
 			        },
 			        "_lastName": {
-			            "value": "User",
+			            "value": "",
 			            "isEditableByEndUser": true
 			        },
 			        "_email": {
-			            "value": "test.user@test.com",
+			            "value": "",
 			            "isEditableByEndUser": true
 			        },
 			        "_subject": {
-			            "value": "Testing",
+			            "value": "",
 			            "isEditableByEndUser": true
 				}
 			    });
