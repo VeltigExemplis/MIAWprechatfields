@@ -8,7 +8,7 @@
 			console.log( "Inside Prechat API!!" );
 			embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( {'QueueName' : 'SOI' } );
 			});
-			window.addEventListener("onEmbeddedMessagingReady", e => {
+			/*window.addEventListener("onEmbeddedMessagingReady", e => {
 			    embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({
 			        "_firstName": {
 			            "value": "",
@@ -27,7 +27,7 @@
 			            "isEditableByEndUser": true
 				}
 			    });
-			});
+			});*/
 			
 			embeddedservice_bootstrap.init(
 				'00DO400000C6iHG',
