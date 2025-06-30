@@ -3,6 +3,12 @@
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+   window.addEventListener("onEmbeddedMessagingConversationParticipantChanged", e => {
+	   console.log(e);
+			    });
+       window.addEventListener("onEmbeddedMessagingConversationClosed", e => {
+	   console.log(e);
+			    });
 			
 			window.addEventListener("onEmbeddedMessagingReady", () => {            
 			console.log( "Inside Prechat API!!" );
