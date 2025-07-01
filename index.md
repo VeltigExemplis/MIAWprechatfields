@@ -1,3 +1,9 @@
+<html>
+	<a id="liveagent_button_online_573Po000000NWtd" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('573Po000000NWtd')"><!-- Online Chat Content --></a><div id="liveagent_button_offline_573Po000000NWtd" style="display: none;"><!-- Offline Chat Content --></div><script type="text/javascript">
+if (!window._laq) { window._laq = []; }
+window._laq.push(function(){liveagent.showWhenOnline('573Po000000NWtd', document.getElementById('liveagent_button_online_573Po000000NWtd'));
+liveagent.showWhenOffline('573Po000000NWtd', document.getElementById('liveagent_button_offline_573Po000000NWtd'));
+});</script>
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #3a6f8a;
@@ -6,12 +12,6 @@
 	.embeddedServiceHelpButton .helpButton .uiButton:focus {
 		outline: 1px solid #3a6f8a;
 	}
-</style>
-<a id="liveagent_button_online_573Po000000NWtd" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('573Po000000NWtd')"><!-- Online Chat Content --></a><div id="liveagent_button_offline_573Po000000NWtd" style="display: none;"><!-- Offline Chat Content --></div><script type="text/javascript">
-if (!window._laq) { window._laq = []; }
-window._laq.push(function(){liveagent.showWhenOnline('573Po000000NWtd', document.getElementById('liveagent_button_online_573Po000000NWtd'));
-liveagent.showWhenOffline('573Po000000NWtd', document.getElementById('liveagent_button_offline_573Po000000NWtd'));
-});</script>
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
@@ -65,3 +65,5 @@ liveagent.showWhenOffline('573Po000000NWtd', document.getElementById('liveagent_
 		initESW('https://service.force.com');
 	}
 </script>
+
+</html>
