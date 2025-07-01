@@ -1,51 +1,62 @@
-<html>
-    <script type='text/javascript'>
-	function initEmbeddedMessaging() {
-		try {
-			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-   window.addEventListener("onEmbeddedMessagingConversationParticipantChanged", e => {
-	   console.log(e);
-			    });
-       window.addEventListener("onEmbeddedMessagingConversationClosed", e => {
-	   console.log(e);
-			    });
-			
-			window.addEventListener("onEmbeddedMessagingReady", () => {            
-			console.log( "Inside Prechat API!!" );
-			embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( {'QueueName' : 'SOI' } );
-			});
-			window.addEventListener("onEmbeddedMessagingReady", e => {
-			    embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({
-			        "_firstName": {
-			            "value": "",
-			            "isEditableByEndUser": true
-			        },
-			        "_lastName": {
-			            "value": "",
-			            "isEditableByEndUser": true
-			        },
-			        "_email": {
-			            "value": "",
-			            "isEditableByEndUser": true
-			        },
-			        "_subject": {
-			            "value": "",
-			            "isEditableByEndUser": true
-				}
-			    });
-			});
-			embeddedservice_bootstrap.init(
-				'00DO400000C6iHG',
-				'SitOnIt_Messaging_Chat',
-				'https://exemplis--partial.sandbox.my.site.com/ESWSitOnItMessagingChat1749155554156',
-				{
-					scrt2URL: 'https://exemplis--partial.sandbox.my.salesforce-scrt.com'
-				}
-			);
-		} catch (err) {
-			console.error('Error loading Embedded Messaging: ', err);
-		}
+<style type='text/css'>
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #3a6f8a;
+		font-family: "Arial", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #3a6f8a;
+	}
+</style>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+	var initESW = function(gslbBaseURL) {
+		embedded_svc.settings.displayHelpButton = true; //Or false
+		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+
+		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+
+		// Settings for Chat
+		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+			// Returns a valid button ID.
+		//};
+		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+
+		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+		embedded_svc.settings.entryFeature = 'LiveAgent';
+
+		embedded_svc.init(
+			'https://exemplis--partial.sandbox.my.salesforce.com',
+			'https://exemplis--partial.sandbox.my.salesforce-sites.com/liveagent',
+			gslbBaseURL,
+			'00DO400000C6iHG',
+			'SitOnIt_Chat',
+			{
+				baseLiveAgentContentURL: 'https://c.la12s-core1.sfdc-yfeipo.salesforceliveagent.com/content',
+				deploymentId: '572Po00000A3afW',
+				buttonId: '573Po000000NWtd',
+				baseLiveAgentURL: 'https://d.la12s-core1.sfdc-yfeipo.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IPo000000XT6TMAW_195d408ac20',
+				isOfflineSupportEnabled: true
+			}
+		);
 	};
-	</script>
-	<script type='text/javascript' src='https://exemplis--partial.sandbox.my.site.com/ESWSitOnItMessagingChat1749155554156/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-</html>
+
+	if (!window.embedded_svc) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://exemplis--partial.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
+</script>
